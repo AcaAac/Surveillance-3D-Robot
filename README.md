@@ -109,11 +109,11 @@ You can control the arm by publishing to the `/set_joint_trajectory` topic with 
 ```bash
 ros2 topic pub -1 /set_joint_trajectory trajectory_msgs/msg/JointTrajectory '{header: {frame_id: arm_base_link}, joint_names: [arm_base_forearm_joint, forearm_hand_joint], points: [ {positions: {0.0, 0.0}} ]}'
 ```
-![Gazebo2](src/Gazebo_2.png)
 
 ## Running the Code
 To run the entire simulation:
 ```bash
 ros2 launch my_robot_bringup my_robot_gazebo.launch.xml
 ```
+![Gazebo2](src/Gazebo_2.png)
  
