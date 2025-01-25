@@ -2,14 +2,16 @@
 
 ## Project Overview
 The Surveillance Robot is a robotic system consisting of a 3D car model built in Gazebo with a 2-jointed serial manipulator mounted on top. The manipulator holds a camera at its tip. This project was developed using RViz2 and Gazebo for visualization and simulation.
+![Gazebo1](src/Gazebo1)
 
 ## System Structure
 
 ### Car Model
 The car model is created inside the `mobile_base.xacro` file. It is a classic 2-wheel Ackerman car. This file can be found inside the folder `src/my_robot_description`.
-
+![ARMRVIZ](src/RVIZ1)
 ### Serial Manipulator
 The 2-jointed serial manipulator is described inside the `arm.xacro` file, which is also in the `src/my_robot_description` folder. The manipulator has two cylindrical links and holds the camera at its tip.
+![ARMRVIZ](src/RVIZ2)
 
 ### Camera
 The camera is described in the `camera.xacro` file and is attached to the tip of the serial manipulator. This file is also found in the `src/my_robot_description` folder.
@@ -107,6 +109,7 @@ You can control the arm by publishing to the `/set_joint_trajectory` topic with 
 ```bash
 ros2 topic pub -1 /set_joint_trajectory trajectory_msgs/msg/JointTrajectory '{header: {frame_id: arm_base_link}, joint_names: [arm_base_forearm_joint, forearm_hand_joint], points: [ {positions: {0.0, 0.0}} ]}'
 ```
+![Gazebo2](src/Gazebo2)
 
 ## Running the Code
 To run the entire simulation:
